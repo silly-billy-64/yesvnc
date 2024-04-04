@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>yesVNC Launcher</h1>
+    <p>Popups <strong>must be allowed for masked launching.</strong> This page requires separate popup permissions than the last one.</p>
+    <p>Don't know what to do? Launch masked is good for most people.</p>
+    <button id="launch" onclick="launchMasked()">Launch Masked (about:blank)</button>
+    <button id="visible-launch" onclick="launchNormal()">Launch Normally (more reliable)</button>
+    <script>
+        function launchMasked() {
+            const win = window.open("about:blank", "_blank")
+            win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-1234.app.github.dev/favicon.ico">
+<title>hcpss.me</title>
+</head>
+<body>
+    <iframe style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; border: none;" src="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-6080.app.github.dev/"></iframe>
+</body>
+</html>
+            `)
+            window.open("", "_top").close()
+        }
+        function launchNormal() {
+            window.location.hostname = window.location.hostname.replace(1234, 6080)
+        }
+    </script>
+</body>
+</html>
