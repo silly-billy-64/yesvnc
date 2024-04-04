@@ -18,7 +18,6 @@ fetch("https://api.github.com/repos/silly-billy-64/yesvnc/commits/main").then((r
             process.exit(1)
         }
         if (sha !== oldSha) {
-            fs.writeFileSync(filePath, sha)
             // console.log("New SHA: " + sha)
             inquirer.prompt([{name: "confirmed", type: "confirm", message: "A new update is avilable for yesvnc! Would you like to update now? You will lose your firefox data, but the update may introduce new features and fixes." }]).then((answer) => {
                 if (answer.confirmed == false) {
@@ -26,6 +25,7 @@ fetch("https://api.github.com/repos/silly-billy-64/yesvnc/commits/main").then((r
                     process.exit(1)
                 } else {
                     console.log("Updating... please wait. yesVNC will automatically launch when the update is complete.")
+                    fs.writeFileSync(filePath, sha)
                     process.exit(0)
                 }
             });
