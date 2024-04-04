@@ -66,12 +66,19 @@ mkdir -p ~/.config/tint2/
 cp ./config/tint2rc ~/.config/tint2/tint2rc
 chmod +x start.sh
 chmod +x open.sh
+chmod +x stop.sh
 echo "$(pwd)/start.sh" > start
 echo "$(pwd)/open.sh" > open
+echo "$(pwd)/stop.sh" > stop
 chmod +x start
 chmod +x open
+chmod +x stop
 sudo mv start /usr/local/bin
 sudo mv open /usr/local/bin
+sudo mv stop /usr/local/bin
+cd config
+~/.bun/bin/bun patcher.js
+cd ..
 echo "=== Setup complete, starting now ==="
 touch ~/.setup_complete
 if [ -z "${NO_AUTOSTART}" ]; then
