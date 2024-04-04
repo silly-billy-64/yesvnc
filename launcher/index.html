@@ -27,14 +27,14 @@
 <title>hcpss.me</title>
 </head>
 <body>
-    <iframe style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; border: none;" src="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-6080.app.github.dev/"></iframe>
+    <iframe style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; border: none;" src="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-6080.app.github.dev/?autoConnect=true"></iframe>
 </body>
 </html>
             `)
             window.open("", "_top").close()
         }
         function launchNormal() {
-            window.location.hostname = window.location.hostname.replace(1234, 6080)
+            window.location.href = window.location.href.replace(1234, 6080) + "?autoConnect=true"
         }
     </script>
 </body>

@@ -24,6 +24,9 @@ source ~/.bashrc
 cd launcher
 ~/.bun/bin/bun i
 cd ..
+cd updater
+~/.bun/bin/bun i
+cd ..
 echo "=== Installing Packages ==="
 sudo apt install -y tigervnc-standalone-server openbox tint2 feh pcmanfm xdg-utils
 echo "=== Installing Firefox ==="

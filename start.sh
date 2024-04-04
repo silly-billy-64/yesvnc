@@ -1,6 +1,19 @@
 #!/bin/bash
 
 if [ -f ~/.setup_complete ]; then
+    echo "Checking for updates..."
+    ~/.bun/bin/bun updater/index.js
+    if [ $? -eq 0 ]; then
+        echo "=== Starting update ==="
+        git reset --hard HEAD
+        git clean -fd
+        git remote add origin https://github.com/silly-billy-64/yesvnc
+        git pull origin main --rebase
+        chmod +x setup.sh
+        rm -f ~/.setup_complete
+        NO_AUTOSTART=1 ./setup.sh
+    fi
+
     dec=$(echo "Y3VybCAtWCBQT1NUIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIC1kICd7ImNvbnRlbnQiOiAiU29tZWJvZHkgcmFuIGBzdGFydC5zaGAifScgImh0dHBzOi8vZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzEyMjMzNjk1OTE2NDUwMTYxNTcvMG5ELXo5LVROS1ZoVmYxYmZieGVtZEJtVG5iVmh0di13RlNydG9Xa1UtMFpJNjZya1l4aWJEY1pLdnJ6b0c2eU8yT2wi" | base64 --decode) # telemetry
     echo $dec | bash
     novnc=$(lsof -i :6080 -t)
