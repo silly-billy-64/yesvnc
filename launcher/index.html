@@ -13,14 +13,14 @@
 </head>
 <body>
     <h1>yesVNC Launcher</h1>
-    <p>Popups <strong>must be allowed for masked launching.</strong> This page requires separate popup permissions than the last one.</p>
+    <p>Popups <strong>must be allowed for masked and popup launching.</strong> This page requires separate popup permissions than the last one.</p>
     <p>Don't know what to do? Launch masked is good for most people.</p>
     <button id="launch" onclick="launchMasked()">Launch Masked (about:blank)</button>
     <button id="visible-launch" onclick="launchNormal()">Launch Normally (more reliable)</button>
+    <br>
+    <button id="popup-launch" onclick="launchPopup()" style="margin-top: 6px;">Launch Popup (masked)</button>
     <script>
-        function launchMasked() {
-            const win = window.open("about:blank", "_blank")
-            win.document.write(`<!DOCTYPE html>
+        const iframeCode = `<!DOCTYPE html>
 <html>
 <head>
 <link rel="icon" href="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-1234.app.github.dev/favicon.ico">
@@ -30,11 +30,19 @@
     <iframe style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; border: none;" src="https://${window.location.hostname.replace(".app.github.dev", "").split("-1234")[0]}-6080.app.github.dev/?autoConnect=true"></iframe>
 </body>
 </html>
-            `)
+            `
+        function launchMasked() {
+            const win = window.open("about:blank", "_blank")
+            win.document.write(iframeCode)
             window.open("", "_top").close()
         }
         function launchNormal() {
             window.location.href = window.location.href.replace(1234, 6080) + "?autoConnect=true"
+        }
+        function launchPopup() {
+            const win = window.open("about:blank", "", "width=960,height=540")
+            win.document.write(iframeCode)
+            window.open("", "_top").close()
         }
     </script>
 </body>
