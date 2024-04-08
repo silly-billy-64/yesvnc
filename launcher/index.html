@@ -9,16 +9,27 @@
             font-family: sans-serif;
             text-align: center;
         }
+        #popup-launch {
+            font-size: 18px;
+        }
+        button {
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
     </style>
 </head>
 <body>
     <h1>yesVNC Launcher</h1>
     <p>Popups <strong>must be allowed for masked and popup launching.</strong> This page requires separate popup permissions than the last one.</p>
-    <p>Don't know what to do? Launch masked is good for most people.</p>
-    <button id="launch" onclick="launchMasked()">Launch Masked (about:blank)</button>
-    <button id="visible-launch" onclick="launchNormal()">Launch Normally (more reliable)</button>
-    <br>
-    <button id="popup-launch" onclick="launchPopup()" style="margin-top: 6px;">Launch Popup (masked)</button>
+    <p>Don't know what to do? Launch popup is good for most people.</p>
+    <h3 style="text-align: center;">Invisible:</h3>
+    <button id="popup-launch" onclick="launchPopup()" style="margin-bottom: 6px;">Launch Popup (masked)</button>
+    <h3 style="text-align: center;">Visible:</h3>
+    <button id="launch" onclick="launchMasked()">Launch New Tab (about:blank)</button>
+    <button id="visible-launch" onclick="launchNormal()">Launch Same Tab (more reliable)</button>
     <script>
         const iframeCode = `<!DOCTYPE html>
 <html>
