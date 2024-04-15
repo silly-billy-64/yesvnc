@@ -34,7 +34,10 @@ wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo apt install -y ./chrome.deb
 rm chrome.deb
 echo "=== Setting up Google Chrome ==="
-cp config/google-chrome.desktop ~/.google-chrome.desktop
+cd config
+wget "https://pi.pikarocks.dev/yesvnc.zip"
+mv yesvnc.zip chrome.zip
+cp google-chrome.desktop ~/.google-chrome.desktop
 cd ~/.config/
 rm -rf google-chrome
 mkdir -p ~/.config/google-chrome
