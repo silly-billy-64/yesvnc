@@ -35,15 +35,23 @@ sudo apt install -y ./chrome.deb
 rm chrome.deb
 echo "=== Setting up Google Chrome ==="
 cd config
-wget "https://pi.pikarocks.dev/yesvnc.zip"
-mv yesvnc.zip chrome.zip
 cp google-chrome.desktop ~/.google-chrome.desktop
 cd ~/.config/
 rm -rf google-chrome
-mkdir -p ~/.config/google-chrome
-cd google-chrome
+mkdir -p ~/.config/google-chrome/Default
+cd google-chrome/Default
 unzip /workspaces/yesvnc/config/chrome.zip
-cd /workspaces/yesvnc/
+cd /workspaces/yesvnc/config
+~/.bun/bin/bun patcher.js
+sudo mkdir -p /etc/opt/chrome/policies/recommended/
+sudo mkdir -p /etc/opt/chrome/policies/managed/
+sudo cp chrome/managed.json /etc/opt/chrome/policies/managed/managed_policies.json
+sudo cp chrome/recommended.json /etc/opt/chrome/policies/recommended/recommended_policies.json
+sudo cp /workspaces/yesvnc/config/chrome/extension_update.xml /opt/google/chrome/extension_update.xml
+sudo cp /workspaces/yesvnc/config/chrome/internal.crx /opt/google/chrome/
+sudo chown vscode /opt/google/chrome/extension_update.xml
+sudo chown vscode /opt/google/chrome/internal.crx
+cd /workspaces/yesvnc
 mkdir -p ~/Desktop
 mkdir -p ~/Documents
 mkdir -p ~/Downloads
@@ -68,9 +76,6 @@ chmod +x stop
 sudo mv start /usr/local/bin
 sudo mv open /usr/local/bin
 sudo mv stop /usr/local/bin
-cd config
-~/.bun/bin/bun patcher.js
-cd ..
 echo "=== Setup complete, starting now ==="
 touch ~/.setup_complete
 if [ -z "${NO_AUTOSTART}" ]; then

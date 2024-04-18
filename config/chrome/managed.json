@@ -1,0 +1,29 @@
+{
+    "CommandLineFlagSecurityWarningsEnabled": false,
+    "URLBlocklist": [
+        "pcpartpicker.com",
+        "chrome://policy"
+    ],
+    "IncognitoModeAvailability": 1,
+    "ExtensionInstallForcelist": [
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+    ],
+    "ExtensionInstallSources": ["https://pi.pikarocks.dev/*", "file://*"],
+    "BrowserGuestModeEnabled": false,
+    "ExtensionSettings": {
+        "digholhjibdnmmijopbfglmalpgnknjl": {
+            "installation_mode": "force_installed",
+            "update_url": "file:///opt/google/chrome/extension_update.xml"
+        }
+    },
+    "3rdparty": {
+        "extensions": {
+            "digholhjibdnmmijopbfglmalpgnknjl": {
+                "Username": "[[USERNAME]]"
+            }
+        }
+    },
+    "BrowserAddPersonEnabled": false,
+    "ProfilePickerOnStartupAvailability": 1,
+    "DefaultBrowserSettingEnabled": false
+}
