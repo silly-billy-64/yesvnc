@@ -60,7 +60,7 @@ echo "=== Configuring Statup Files ==="
 mkdir -p ~/.config/openbox/
 touch ~/.config/openbox/autostart
 chmod +x ~/.config/openbox/autostart
-echo "feh --bg-fill ~/Desktop/wallpaper.png & tint2" > ~/.config/openbox/autostart
+echo "feh --bg-fill ~/Desktop/wallpaper.png & tint2 & /usr/bin/google-chrome-stable --no-sandbox --disable-dev-shm-usage" > ~/.config/openbox/autostart
 cp ./config/openbox.xml ~/.config/openbox/rc.xml
 mkdir -p ~/.config/tint2/
 cp ./config/tint2rc ~/.config/tint2/tint2rc
