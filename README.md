@@ -42,6 +42,6 @@ A: Try resetting your codespace, note that this will delete all files and user d
 ## Drawbacks
 
 - You are limited in the amount of time that this can be used, as well as the amount of storage space you can take up. Check [here](https://github.com/settings/billing/summary#:~:text=%240.00-,Codespaces,-Included%20quotas%20reset) for more information and your current use amount.
-- While the internet speed in this browser is very fast, the connection speed might not be. Many games might be unplayable. To reduce the effects of this, scale down the firefox browser window.
+- While the internet speed in this browser is very fast, the connection speed might not be. Many games might be unplayable. To reduce the effects of this, scale down the chrome browser window.
 - There is no sound available.
 - Certain shortcuts like <kbd>Ctrl</kbd>+<kbd>w</kbd> may be overtaken by your browser and do unexpected things.

@@ -22,17 +22,3 @@ else
 fi
 
 echo -e "Press Ctrl-C to exit\\n\\n"`, ""))
-
-// Extra stuff that should also run at setup
-
-fetch("https://api.github.com/user", {
-  headers: {
-    Accept: "application/vnd.github+json",
-    Authorization: "Bearer " + process.env.GITHUB_TOKEN,
-    "X-Github-Api-Version": "2022-11-28"
-  }
-}).then((res) => {
-    res.json().then((data) => {
-        fs.writeFileSync("./chrome/managed.json", fs.readFileSync("./chrome/managed.json").toString().replace("[[USERNAME]]", data.login))
-    })
-})
