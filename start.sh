@@ -5,10 +5,11 @@ if [ -f ~/.setup_complete ]; then
     ~/.bun/bin/bun updater/index.js
     if [ $? -eq 0 ]; then
         echo "=== Starting update ==="
+        git fetch --all
         git reset --hard HEAD
         git clean -fd
         git remote add origin https://github.com/silly-billy-64/yesvnc
-        git pull origin main --rebase
+        git pull origin main
         chmod +x setup.sh
         rm -f ~/.setup_complete
         NO_AUTOSTART=1 ./setup.sh
