@@ -45,12 +45,8 @@ cd /workspaces/yesvnc/config
 ~/.bun/bin/bun patcher.js
 sudo mkdir -p /etc/opt/chrome/policies/recommended/
 sudo mkdir -p /etc/opt/chrome/policies/managed/
-sudo cp /tmp/managed.json /etc/opt/chrome/policies/managed/managed_policies.json
+sudo cp chrome/managed.json /etc/opt/chrome/policies/managed/managed_policies.json
 sudo cp chrome/recommended.json /etc/opt/chrome/policies/recommended/recommended_policies.json
-sudo cp /workspaces/yesvnc/config/chrome/extension_update.xml /opt/google/chrome/extension_update.xml
-sudo cp /workspaces/yesvnc/config/chrome/internal.crx /opt/google/chrome/
-sudo chown vscode /opt/google/chrome/extension_update.xml
-sudo chown vscode /opt/google/chrome/internal.crx
 cd /workspaces/yesvnc
 mkdir -p ~/Desktop
 mkdir -p ~/Documents
