@@ -27,6 +27,9 @@ cd ..
 cd updater
 ~/.bun/bin/bun i
 cd ..
+cd installer
+~/.bun/bin/bun i
+cd ..
 echo "=== Installing Packages ==="
 sudo apt install -y tigervnc-standalone-server openbox tint2 feh pcmanfm xdg-utils
 echo "=== Installing Google Chrome ==="
@@ -56,7 +59,9 @@ echo "=== Configuring Statup Files ==="
 mkdir -p ~/.config/openbox/
 touch ~/.config/openbox/autostart
 chmod +x ~/.config/openbox/autostart
-echo "feh --bg-fill ~/Desktop/wallpaper.png & tint2 & /usr/bin/google-chrome-stable --no-sandbox --disable-dev-shm-usage" > ~/.config/openbox/autostart
+echo "feh --bg-fill ~/Desktop/wallpaper.png &
+tint2 &
+/usr/bin/google-chrome-stable --no-sandbox --disable-dev-shm-usage &" > ~/.config/openbox/autostart
 cp ./config/openbox.xml ~/.config/openbox/rc.xml
 mkdir -p ~/.config/tint2/
 cp ./config/tint2rc ~/.config/tint2/tint2rc
@@ -66,12 +71,19 @@ chmod +x stop.sh
 echo "$(pwd)/start.sh" > start
 echo "$(pwd)/open.sh" > open
 echo "$(pwd)/stop.sh" > stop
+echo "$(pwd)/installer/yesInstaller.sh" > yesinstall
 chmod +x start
 chmod +x open
 chmod +x stop
+chmod +x yesinstall
 sudo mv start /usr/local/bin
 sudo mv open /usr/local/bin
 sudo mv stop /usr/local/bin
+sudo mv yesinstall /usr/local/bin
+cd /workspaces/yesvnc/installer
+chmod +x yesInstaller.sh
+./yesInstaller.sh --skipAction
+cd /workspaces/yesvnc
 echo "=== Setup complete, starting now ==="
 touch ~/.setup_complete
 if [ -z "${NO_AUTOSTART}" ]; then
