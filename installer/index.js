@@ -51,8 +51,8 @@ function askForApps() {
         }
     ]).then(answer => {
         if (answer.selectedApps.length == 0) {
-            console.log("No apps selected. Exiting.")
-            process.exit()
+            console.log("No apps selected, doing nothing.")
+            process.exit(0)
         }
         answer.selectedApps.forEach(app => {
             fs.appendFileSync("/tmp/yesInstaller", `# Installing ${app.name}\ncd /tmp/installs\n` + app.installScript + "\n")
