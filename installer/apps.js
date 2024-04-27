@@ -86,28 +86,28 @@ polybar -c=~/.config/polybar/config.ini example` //https://raw.githubusercontent
             }, */
             {
                 name: "gedit (text editor)",
-                desc: "A simple and light-weight text editor",
+                desc: "A general purpose text editor.",
                 size: 1649000,
                 tags: ["default"],
                 installScript: "sudo apt install -y gedit"
             },
             {
                 name: "GNOME Software",
-                desc: "A simple way to download more apps",
+                desc: "Install, view, and remove software.",
                 size: 3191808,
                 tags: ["default"],
                 installScript: `sudo apt install -y gnome-software`
             },
             {
-                name: "GNOME shell extension manager",
-                desc: "An easy way to manage all of your gnome shell extensions",
+                name: "GNOME Extension Manager",
+                desc: "Install extensions that offer additional functionality while using GNOME",
                 size: 439296,
                 tags: ["nonYesVNC"],
                 installScript: "sudo apt install -y gnome-shell-extension-manager"
             },
             {
                 name: "TigerVNC Server",
-                desc: "Stream a virtual desktop",
+                desc: "Stream a virtual desktop (advanced users only!!)",
                 size: 2843648,
                 tags: ["nonYesVNC"],
                 installScript: "sudo apt install -y tigervnc-standalone-server"
@@ -115,27 +115,27 @@ polybar -c=~/.config/polybar/config.ini example` //https://raw.githubusercontent
         ]
     },
     "development": {
-        name: "Development",
+        name: "Programming (for advanced users)",
         apps: [
             {
                 name: "VSCode",
-                desc: "Microsoft's Visual Studio Code",
+                desc: "Powerful and feature rich code editor from Microsoft",
                 size: 423624704,
-                tags: ["grows", "nonYesVNC"],
+                tags: ["grows"],
                 installScript: `sudo apt install -y code`
             },
             {
                 name: "NPM",
                 desc: "Javascript package manager",
                 size: 15728640,
-                tags: ["grows", "nonYesVNC"],
+                tags: ["grows"],
                 installScript: "sudo apt install -y npm"
             },
             {
                 name: "Node Version Manager",
                 desc: "Install multiple versions of NodeJS",
                 size: 0,
-                tags: ["nonYesVNC"],
+                tags: ["default"],
                 installScript: "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash"
             }
         ]
