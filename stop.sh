@@ -8,6 +8,6 @@ else
     echo "No existing noVNC processes found, continuing as normal."
 fi
 tigervncserver -kill :0
-# removing lock files
+echo "Removing lock files" # it's probably fineeeeeeeeeeeeeeeeee
 sudo rm -f /tmp/.X11-unix/X0
 sudo rm -f /tmp/.X0-lock
