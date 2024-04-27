@@ -18,7 +18,7 @@ Once everything is ready, a tab should open which should launch your VNC viewer.
 To access your desktop without creating a new codespace every time, visit [github.com/codespaces](https://github.com/codespaces) and click to launch your existing one. Do **not** click the "Use this emplate" button again. Once you are back in, follow these steps to start your desktop:
 
 1. Click into the terminal box in the bottom half of the screen
-2. When you see a block cursor, type `./start.sh` and press enter, if it doesn't work, check that you typed it correctly.
+2. When you see a block cursor, type `./start.sh`, or just `start`, and press enter, if it doesn't work, check that you typed it correctly.
 
 ## Troubleshooting
 
@@ -38,6 +38,13 @@ A: Wait a few seconds and try again or reload
 A: Try resetting your codespace, note that this will delete all files and user data stored. Follow the steps below to try that:
 1. Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and type "Rebuild"
 2. Select the "Full Rebuild Container" option by pressing <kbd>Enter</kbd>, using arrow keys if needed to select it.
+
+### Q: How do I add, and launch more applications?
+A: The first time you set up yesVNC (or after every update) you will be prompted to select additional software to install. Everything is optional. 
+While in this menu, use the arrow keys to move up and down the list, then press space to select or deselect software. When you're done, press enter and it will start installing everything you selected.
+If you want to install more software afterwards, go back to the terminal in the github codespaces page, and type in `yesinstall`, and it will bring back up the menu.
+
+**To run applications, right click on the desktop or an empty spot in the taskbar** and select which application you want to use.
 
 ## Drawbacks
 
