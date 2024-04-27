@@ -40,7 +40,7 @@ A: Try resetting your codespace, note that this will delete all files and user d
 2. Select the "Full Rebuild Container" option by pressing <kbd>Enter</kbd>, using arrow keys if needed to select it.
 
 ### Q: How do I add, and launch more applications?
-A: The first time you set up yesVNC (or after every update) you will be prompted to select additional software to install. Everything is optinoal. 
+A: The first time you set up yesVNC (or after every update) you will be prompted to select additional software to install. Everything is optional. 
 While in this menu, use the arrow keys to move up and down the list, then press space to select or deselect software. When you're done, press enter and it will start installing everything you selected.
 If you want to install more software afterwards, go back to the terminal in the github codespaces page, and type in `yesinstall`, and it will bring back up the menu.
 
