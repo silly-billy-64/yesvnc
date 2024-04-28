@@ -31,7 +31,7 @@ cd installer
 ~/.bun/bin/bun i
 cd ..
 echo "=== Installing Packages ==="
-sudo apt install -y tigervnc-standalone-server openbox tint2 feh pcmanfm xdg-utils
+sudo apt install -y tigervnc-standalone-server openbox tint2 feh xdg-utils
 echo "=== Installing Google Chrome ==="
 wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" --output-document chrome.deb
 sudo apt install -y ./chrome.deb

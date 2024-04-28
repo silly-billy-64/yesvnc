@@ -1,4 +1,30 @@
 export default {
+    "recommended": {
+        name: "Recommended",
+        apps: [
+            {
+                name: "Noto Color Emoji",
+                desc: "Adds support for emojis",
+                size: 11000000,
+                tags: ["default"],
+                installScript: `sudo apt-get install -y fonts-noto-color-emoji`
+            },
+            {
+                name: "File Manager PcManFM",
+                desc: "Manage your downloads and files (HIGHLY recommended)",
+                size: 1648000,
+                tags: ["default"],
+                installScript: `sudo apt-get install -y pcmanfm`
+            },
+            {
+                name: "Mousepad",
+                desc: "A general purpose text editor.",
+                size: 11500000,
+                tags: ["default"],
+                installScript: "sudo apt install -y mousepad"
+            },
+        ]
+    },
     "gaming": {
         name: "Gaming",
         apps: [
@@ -37,7 +63,7 @@ sudo apt-get update && sudo apt-get install -y firefox`
             },
             {
                 name: "Microsoft Edge",
-                desc: "The Microsoft Edge web browser :stinky:",
+                desc: "The web browser from Microsoft",
                 size: 618659840,
                 tags: ["grows"],
                 installScript: `wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_124.0.2478.51-1_amd64.deb && sudo apt install -y ./microsoft-edge-stable_124.0.2478.51-1_amd64.deb
@@ -59,7 +85,7 @@ sudo desktop-file-install --delete-original --set-key=Exec --set-value "/usr/bin
                 name: "Discord",
                 desc: "Discord client",
                 size: 101046628,
-                tags: ["default"],
+                tags: [],
                 installScript: `wget "https://discord.com/api/download?platform=linux&format=deb" --output-document discord.deb && sudo apt install -y ./discord.deb
 sudo desktop-file-install --delete-original --set-key=Exec --set-value "/usr/share/discord/Discord --no-sandbox" /usr/share/applications/discord.desktop`
             }
@@ -85,17 +111,10 @@ echo "polybar -c=~/.config/polybar/config.ini example &" >> autostart
 polybar -c=~/.config/polybar/config.ini example` //https://raw.githubusercontent.com/polybar/polybar/master/doc/config.ini
             }, */
             {
-                name: "gedit (text editor)",
-                desc: "A general purpose text editor.",
-                size: 1649000,
-                tags: ["default"],
-                installScript: "sudo apt install -y gedit"
-            },
-            {
                 name: "GNOME Software",
                 desc: "Install, view, and remove software.",
                 size: 3191808,
-                tags: ["default"],
+                tags: [],
                 installScript: `sudo apt install -y gnome-software`
             },
             {
@@ -135,7 +154,7 @@ polybar -c=~/.config/polybar/config.ini example` //https://raw.githubusercontent
                 name: "Node Version Manager",
                 desc: "Install multiple versions of NodeJS",
                 size: 0,
-                tags: ["default"],
+                tags: [],
                 installScript: "wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash"
             }
         ]

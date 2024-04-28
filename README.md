@@ -18,7 +18,7 @@ Once everything is ready, a tab should open which should launch your VNC viewer.
 To access your desktop without creating a new codespace every time, visit [github.com/codespaces](https://github.com/codespaces) and click to launch your existing one. Do **not** click the "Use this emplate" button again. Once you are back in, follow these steps to start your desktop:
 
 1. Click into the terminal box in the bottom half of the screen
-2. When you see a block cursor, type `./start.sh`, or just `start`, and press enter, if it doesn't work, check that you typed it correctly.
+2. When you see a block cursor, type `start` and press enter.
 
 ## Troubleshooting
 

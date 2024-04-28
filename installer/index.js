@@ -32,8 +32,9 @@ function initApps() {
         appCategory.apps.forEach(app => {
             if (!app.tags.includes("nonYesVNC") || !hostname().includes("codespaces")) {
                 choices.push({
-                    name: app.size > space ? chalk.red(app.name) : (app.size !== 0 ? app.name + ` (${formatStorage(app.size)}${app.tags.includes("grows") ? "+" : ""})` : app.name),
-                    value: app
+                    name: app.size > space ? chalk.red(app.name) : (app.size !== 0 ? app.name + ` | ${app.desc} (${formatStorage(app.size)}${app.tags.includes("grows") ? "+" : ""})` : app.name),
+                    value: app,
+                    checked: app.tags?.includes("default")
                 })
             }
         })
