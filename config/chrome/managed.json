@@ -1,0 +1,11 @@
+{
+    "CommandLineFlagSecurityWarningsEnabled": false,
+    "ExtensionInstallForcelist": [
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+    ],
+    "ExtensionInstallSources": ["file://*"],
+    "BrowserGuestModeEnabled": false,
+    "BrowserAddPersonEnabled": false,
+    "ProfilePickerOnStartupAvailability": 1,
+    "DefaultBrowserSettingEnabled": false
+}
